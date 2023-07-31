@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.gitee.mqtt</groupId>
+    <groupId>com.zhuangpo.mqtt</groupId>
     <artifactId>mqtt-start</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>demo</module>
-        <module>mqtt-starter</module>
+        <module>spring-boot-mqtt-starter</module>
+        <module>spring-boot-mqtt-test</module>
     </modules>
 
     <dependencies>

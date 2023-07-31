@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/spring-boot-mqtt-test/demo.iml" filepath="$PROJECT_DIR$/spring-boot-mqtt-test/demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring-boot-mqtt-starter/mqtt-starter.iml" filepath="$PROJECT_DIR$/spring-boot-mqtt-starter/mqtt-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-emqx-starter.iml" filepath="$PROJECT_DIR$/spring-boot-emqx-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-mqtt-core/spring-boot-mqtt-core.iml" filepath="$PROJECT_DIR$/spring-boot-mqtt-core/spring-boot-mqtt-core.iml" />
     </modules>
   </component>
 </project>

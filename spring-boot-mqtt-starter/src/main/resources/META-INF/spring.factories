@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-    com.zhuangpo.mqtt.config.EmqConfig
+    com.zhuangpo.mqtt.utils.ApplicationContextUtil,com.zhuangpo.mqtt.config.EmqConfig

@@ -27,10 +27,10 @@ public abstract class SuperConsumer<T> implements IMqttMessageListener, MsgDecod
     }
 
     /**
-     * 业务操作
+     * 具体业务处理由子类去实现
      *
-     * @param topic
-     * @param entity
+     * @param topic  主题
+     * @param entity 参数
      */
     protected abstract void msgHandler(String topic, T entity);
 }

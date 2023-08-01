@@ -2,14 +2,14 @@
 
 ## 一、项目概述
 
-### 1、技术架构
+#### 1、技术架构
 
 项目总体技术选型
 
 ```
 SpringBoot2.3.6 + Maven3.5.4 + mqtt1.2.2 + lombok(插件)
 ```
-### 2、项目整体结构
+#### 2、项目整体结构
 
 ```makefile
 spring-boot-mqtt-core # 核心实现
@@ -19,7 +19,7 @@ spring-boot-mqtt-test # 测试实现
 
 ## 二、项目学习点
 
-### 1、@SneakyThrows注解
+#### 1、@SneakyThrows注解
 
 @SneakyThrows是Lombok包下的注解，主要作用于针对异常捕获，减少了代码量，让代码看起来更加的整洁。
 
@@ -46,7 +46,7 @@ spring-boot-mqtt-test # 测试实现
 
 这两个编译后的class文件结果是一样的。
 
-### 2、将Spring容器对象封装成静态工具类
+#### 2、将Spring容器对象封装成静态工具类
 
 代码如下
 
@@ -75,7 +75,7 @@ public class ApplicationContextUtil {
 MqttClient client = ApplicationContextUtil.getBean(MqttClient.class);
 ```
 
-### 3、配置类不要用new来直接创建对象，而是通过@Bean注解注入容器
+#### 3、配置类不要用new来直接创建对象，而是通过@Bean注解注入容器
 
 上面这么讲其实还不是很清晰，这里通过代码演示，就以项目中的MqttClient配置类来讲解
 
@@ -133,13 +133,13 @@ MqttClient client = ApplicationContextUtil.getBean(MqttClient.class);
 ```
 
 
-### 4、抽离思想
+#### 4、抽离思想
 
 主要有以下几点：
 
-#### 4.1、主题抽离
+##### 4.1、主题抽离
 抽离出成一个单独的类Sub01,Sub08，一个主题就像一个不同的策略。
-#### 4.2、顶成主题抽离
+##### 4.2、顶成主题抽离
 将每个主题公共方法抽取出来，做一些逻辑处理
 ```java
 @Slf4j
@@ -171,7 +171,7 @@ public abstract class SuperConsumer<T> implements IMqttMessageListener, MsgDecod
 }
 ```
 
-#### 4.3、编解码抽离
+##### 4.3、编解码抽离
 
 定义了编解码接口，但具体实现确由每个主题去实现，毕竟每个主题的编解码方式不一样，这样抽离的好处扩展性非常好。
 
@@ -213,11 +213,11 @@ public class Sub01 extends SuperConsumer<String> {
 }
 ```
 
-### 5、泛行思想<T>
+#### 5、泛行思想<T>
 
 因为每个子主题的对象都不一样，所以采用泛行思想。编解码接口泛行,父主题泛行,子主题泛行。
 
-### 6、线程池使用
+#### 6、线程池使用
 
 因为主题很多,这里一定要异步操作，不然一旦消息多，系统资源可能耗尽导致OOM,除了用线程池，也可以考虑用消息队列。
 
@@ -233,7 +233,7 @@ public class Sub01 extends SuperConsumer<String> {
     }
 ```
 
-### 7、将注解也注入容器中
+#### 7、将注解也注入容器中
 
 这样就可以通过以下获取
 Map<String, Object> beansWithAnnotation = applicationContext.getBeansWithAnnotation(Topic.class);

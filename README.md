@@ -232,3 +232,8 @@ public class Sub01 extends SuperConsumer<String> {
         });
     }
 ```
+
+#### 7、将注解也注入容器中
+
+这样就可以通过以下获取
+Map<String, Object> beansWithAnnotation = applicationContext.getBeansWithAnnotation(Topic.class);
